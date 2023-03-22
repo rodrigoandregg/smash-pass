@@ -1,0 +1,17 @@
+@mixin flexBox($ff: row nowrap, $jc: center, $ai: center) {
+	display: flex;
+	flex-flow: $ff;
+	justify-content: $jc;
+	align-items: $ai;
+}
+
+@mixin btn($bg-clr: $dark, $clr: $light, $p: 0.5em 0.5em, $fsz: 1.2em) {
+	background-color: $bg-clr;
+	border-radius: 0.5em;
+	color: $clr;
+	@include flexBox;
+	gap: 1em;
+	padding: $p;
+	font-weight: 500;
+	font-size: $fsz;
+}
