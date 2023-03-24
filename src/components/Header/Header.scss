@@ -3,13 +3,19 @@
 	@include flexBox($jc: space-between);
 	width: 100%;
 	height: 4.5em;
-	background-color: $primary;
 	color: $light;
+	position: fixed;
+	top: 0;
+	z-index: 3;
+
+	&--down {
+		background-color: $primary;
+	}
 
 	&-h1 {
 		@include flexBox;
 		font-weight: 900;
-		font-size: 1.5em;
+		font-size: 2em;
 		padding: 0 1em;
 	}
 
@@ -18,7 +24,6 @@
 		width: 100%;
 		height: 3em;
 		padding: 0 1em;
-		overflow: hidden;
 		position: relative;
 	}
 
@@ -67,9 +72,50 @@
 			transition: all 0.2s;
 			background-color: $accent;
 		}
+
+		&:active {
+			background-color: $primary;
+		}
 	}
 
 	&-link {
 		text-align: center;
+	}
+}
+
+@media (max-width: 768px) {
+	.Header {
+		&-menu {
+			width: 4em;
+			height: 3em;
+			transition: all 1s;
+			top: 0;
+			grid-template-columns: unset;
+
+			&--open {
+				transition: all 0.3s;
+				width: 8em;
+				height: 18em;
+				color: $light;
+				justify-content: unset;
+				grid-template-rows: repeat(4, 1fr);
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	.Header {
+		&-h1 {
+			max-width: 5em;
+			font-size: 1.5em;
+			margin: 0 0.5em;
+		}
+
+		&-menu {
+			&--open {
+				background-color: $dark-acrylic;
+			}
+		}
 	}
 }

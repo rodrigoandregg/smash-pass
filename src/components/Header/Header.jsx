@@ -3,7 +3,7 @@ import { GlobalContext } from '../../Provider/Provider';
 import { Link } from 'react-router-dom';
 import './Header.scss';
 
-export const Header = () => {
+export const Header = ({ cosa }) => {
 	const { header } = useContext(GlobalContext);
 	const { logo, nav } = header;
 	const { menu } = nav;
@@ -24,8 +24,10 @@ export const Header = () => {
 	};
 
 	return (
-		<header className='Header'>
-			<h1 className='Header-h1'>{logo.text}</h1>
+		<header className={`Header Header--${cosa}`}>
+			<Link to={logo.ruta}>
+				<h1 className='Header-h1'>{logo.text}</h1>
+			</Link>
 			<nav className='Header-nav'>
 				<ul
 					ref={refMenu}

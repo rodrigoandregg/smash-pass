@@ -6,30 +6,31 @@ const data = {
 	header: {
 		logo: {
 			src: '',
-			text: 'Smash/Pass',
+			text: 'Jueguitos',
 			title: 'Home',
+			ruta: '/home',
 		},
 		nav: {
 			icon: <MdMenuOpen />,
 			menu: [
 				{
 					id: uuidv4(),
-					text: 'home',
+					text: 'Home',
 					ruta: '/home',
 				},
 				{
 					id: uuidv4(),
-					text: 'contact',
-					ruta: '/contact',
+					text: 'Versus',
+					ruta: '/Versus',
 				},
 				{
 					id: uuidv4(),
-					text: 'news',
-					ruta: '/news',
+					text: 'Quizes',
+					ruta: '/Quizes',
 				},
 				{
 					id: uuidv4(),
-					text: 'faqs',
+					text: 'FAQs',
 					ruta: '/faqs',
 				},
 			],
