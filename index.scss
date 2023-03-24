@@ -85,13 +85,14 @@ body {
 }
 
 .Game {
-	@include flexBox;
+	@include flexBox($ff: column nowrap);
 	width: 100%;
 	background-color: $secondary;
 	color: $light;
 	background-size: cover !important;
 	position: relative;
 	z-index: 1;
+	gap: 2em;
 
 	&::before {
 		content: '';
