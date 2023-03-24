@@ -1,11 +1,10 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { GlobalContext } from '../../Provider/Provider';
 import { Link } from 'react-router-dom';
-import { MdMenuOpen } from 'react-icons/md';
 
 export const Header = () => {
 	const { header } = useContext(GlobalContext);
-	const { nav } = header;
+	const { logo, nav } = header;
 	const { menu } = nav;
 	const [estadoMenu, setEstadoMenu] = useState('closed');
 
@@ -25,7 +24,7 @@ export const Header = () => {
 
 	return (
 		<header className='Header'>
-			<h1 className='Header-h1'>Smash/Pass</h1>
+			<h1 className='Header-h1'>{logo.text}</h1>
 			<nav className='Header-nav'>
 				<ul
 					ref={refMenu}
@@ -36,9 +35,7 @@ export const Header = () => {
 					onMouseLeave={() => setEstadoMenu('closed')}
 				>
 					{estadoMenu === 'closed' ? (
-						<li className='Header-icon'>
-							<MdMenuOpen />
-						</li>
+						<li className='Header-icon'>{nav.icon}</li>
 					) : (
 						menu.map(option => (
 							<Link

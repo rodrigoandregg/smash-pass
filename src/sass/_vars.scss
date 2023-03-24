@@ -1,6 +1,12 @@
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-$main-font: 'Inter', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Sen:wght@400;700;800&display=swap');
+$sec-font: 'Inter', sans-serif;
+$main-font: 'Sen', sans-serif;
 //colors
 $dark: #252525;
 $light: #f5f5f5;
+$primary: #8052c8;
+$secondary: #0a0a27;
+$accent: #faab4b;
+$light-acrylic: #ffffff4f;
+$dark-acrylic: #25252574;

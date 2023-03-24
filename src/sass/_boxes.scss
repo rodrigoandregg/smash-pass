@@ -5,13 +5,29 @@
 	align-items: $ai;
 }
 
-@mixin btn($bg-clr: $dark, $clr: $light, $p: 0.5em 0.5em, $fsz: 1.2em) {
-	background-color: $bg-clr;
-	border-radius: 0.5em;
-	color: $clr;
+@mixin btn(
+	$bg-clr: $light-acrylic,
+	$hover-bg: $accent,
+	$clr: $light,
+	$hover-clr: $secondary,
+	$p: 0.5em 1em,
+	$fsz: 1.2em
+) {
 	@include flexBox;
 	gap: 1em;
 	padding: $p;
-	font-weight: 500;
 	font-size: $fsz;
+	font-weight: 700;
+	color: $clr;
+	background-color: $bg-clr;
+	backdrop-filter: blur(1em);
+	border-radius: 0.5em;
+	text-transform: uppercase;
+	transition: all 1s;
+
+	&:hover {
+		transition: all 0.2s;
+		background-color: $hover-bg;
+		color: $hover-clr;
+	}
 }

@@ -1,4 +1,4 @@
-![Imagen del proyecto]()
+![Imagen del proyecto](./public/images/captura-proyecto.png)
 
 # App: _**Smash or Pass**_ - Waifus Edition
 
