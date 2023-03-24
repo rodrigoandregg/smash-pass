@@ -1,9 +1,4 @@
-import {
-	BrowserRouter as Router,
-	Navigate,
-	Route,
-	Routes,
-} from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import Contact from './components/pages/Contact';
 import Faqs from './components/pages/Faqs';
@@ -12,7 +7,7 @@ import News from './components/pages/News';
 
 export const App = () => {
 	return (
-		<Router>
+		<HashRouter>
 			<Header />
 			<Routes>
 				<Route exact path='/' element={<Home />} />
@@ -21,6 +16,6 @@ export const App = () => {
 				<Route path='/contact' element={<Contact />} />
 				<Route path='/faqs' element={<Faqs />} />
 			</Routes>
-		</Router>
+		</HashRouter>
 	);
 };
