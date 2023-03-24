@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {
+	BrowserRouter as Router,
+	Navigate,
+	Route,
+	Routes,
+} from 'react-router-dom';
 import { Header } from './components/Header/Header';
 import Contact from './components/pages/Contact';
 import Faqs from './components/pages/Faqs';
@@ -10,8 +15,8 @@ export const App = () => {
 		<Router>
 			<Header />
 			<Routes>
-				<Route path='/home' element={<Home />} />
 				<Route path='/' element={<Home />} />
+				<Route path='/home' element={<Navigate to='/' />} />
 				<Route path='/news' element={<News />} />
 				<Route path='/contact' element={<Contact />} />
 				<Route path='/faqs' element={<Faqs />} />
