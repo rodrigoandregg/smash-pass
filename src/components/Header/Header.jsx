@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { GlobalContext } from '../../Provider/Provider';
 import { Link } from 'react-router-dom';
+import './Header.scss';
 
 export const Header = () => {
 	const { header } = useContext(GlobalContext);

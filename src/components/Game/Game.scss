@@ -1,0 +1,55 @@
+@import '../../../index.scss';
+
+.Game {
+	@include flexBox($ff: column nowrap);
+	width: 100%;
+	background-color: $secondary;
+	color: $light;
+	background-size: cover !important;
+	position: relative;
+	z-index: 1;
+	gap: 1em;
+	padding: 2em 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		@include flexBox;
+		height: 100%;
+		width: 100%;
+		background-color: $dark-acrylic;
+		backdrop-filter: blur(1em);
+		z-index: -1;
+	}
+
+	&-wrapper {
+		width: 90%;
+		@include flexBox($ff: column nowrap);
+		gap: 1em;
+	}
+
+	&-picture {
+		@include flexBox;
+		width: 16em;
+		height: 26em;
+		border-radius: 0.5em;
+		overflow: hidden;
+		background-color: gray;
+	}
+
+	&-img {
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&-options {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1em;
+		width: 16em;
+	}
+
+	&-btn {
+		@include btn;
+	}
+}

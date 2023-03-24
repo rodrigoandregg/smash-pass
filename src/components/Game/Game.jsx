@@ -1,14 +1,22 @@
 import { useEffect, useState } from 'react';
+import Counter from '../Counter/Counter';
+import './Game.scss';
 
 const Game = () => {
 	const BASE_URL = 'https://api.waifu.im';
 	const IMAGES_URL = `${BASE_URL}/search`;
 	const [waifu, setWaifu] = useState([]);
+	const [passCount, setPassCount] = useState(0);
+	const [smashCount, setSmashCount] = useState(0);
 	// const [waifuColor, setWaifuColor] = useState('');
 
 	useEffect(() => {
 		consumeApiWaifu();
-	}, []);
+	}, [passCount]);
+
+	useEffect(() => {
+		consumeApiWaifu();
+	}, [smashCount]);
 
 	const consumeApiWaifu = async () => {
 		try {
@@ -23,6 +31,15 @@ const Game = () => {
 			console.log(error);
 		}
 	};
+
+	const handleClickPass = () => {
+		setPassCount(passCount + 1);
+	};
+
+	const handleClickSmash = () => {
+		setSmashCount(smashCount + 1);
+	};
+
 	return (
 		<section
 			className='Game'
@@ -32,16 +49,17 @@ const Game = () => {
 		>
 			<div className='Game-wrapper'>
 				<div className='Game-picture'>
-					<img src={waifu} alt='' className='Game-img' />
+					<img src={waifu} alt='' className='Game-img' loading='lazy' />
 				</div>
 				<div className='Game-options'>
-					<button onClick={consumeApiWaifu} className='Game-btn'>
+					<button onClick={handleClickPass} className='Game-btn'>
 						Pass
 					</button>
-					<button onClick={consumeApiWaifu} className='Game-btn'>
+					<button onClick={handleClickSmash} className='Game-btn'>
 						Smash
 					</button>
 				</div>
+				<Counter passCount={passCount} smashCount={smashCount} />
 			</div>
 		</section>
 	);

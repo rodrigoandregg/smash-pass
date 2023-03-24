@@ -1,0 +1,17 @@
+@import '../../../index.scss';
+
+.Counter {
+	width: 16em;
+	@include flexBox;
+	gap: 2em;
+
+	&-wrapper {
+		@include flexBox;
+		width: 100%;
+	}
+
+	&-number {
+		font-size: 3em;
+		font-weight: 700;
+	}
+}
