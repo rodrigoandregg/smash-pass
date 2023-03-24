@@ -14,8 +14,8 @@ const data = {
 			menu: [
 				{
 					id: uuidv4(),
-					text: 'bio',
-					ruta: '/bio',
+					text: 'home',
+					ruta: '/home',
 				},
 				{
 					id: uuidv4(),
