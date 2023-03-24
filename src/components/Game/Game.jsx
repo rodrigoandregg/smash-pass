@@ -8,29 +8,22 @@ const Game = () => {
 	const [waifu, setWaifu] = useState([]);
 	const [passCount, setPassCount] = useState(0);
 	const [smashCount, setSmashCount] = useState(0);
-	// const [waifuColor, setWaifuColor] = useState('');
-
-	useEffect(() => {
-		consumeApiWaifu();
-	}, [passCount]);
-
-	useEffect(() => {
-		consumeApiWaifu();
-	}, [smashCount]);
 
 	const consumeApiWaifu = async () => {
 		try {
 			const data = await fetch(IMAGES_URL);
 			const dataJson = await data.json();
 			const waifuImgSource = dataJson.images[0].url;
-			// const waifuDominantColor = dataJson.images[0].dominant_color;
 			setWaifu(waifuImgSource);
-			// setWaifuColor(waifuDominantColor);
 			console.log(waifu);
 		} catch (error) {
 			console.log(error);
 		}
 	};
+
+	useEffect(() => {
+		consumeApiWaifu();
+	}, [passCount, smashCount]);
 
 	const handleClickPass = () => {
 		setPassCount(passCount + 1);
