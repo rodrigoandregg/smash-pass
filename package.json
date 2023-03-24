@@ -5,6 +5,7 @@
 	"main": "index.jsx",
 	"scripts": {
 		"build": "webpack --config config/webpack.prod.js",
+		"deploy": "gh-pages -d build",
 		"start": "webpack serve --config config/webpack.dev.js",
 		"format": "prettier --write .",
 		"lint": "eslint --fix . --ext .js,.jsx"
@@ -42,6 +43,7 @@
 		"eslint-plugin-n": "^15.6.1",
 		"eslint-plugin-promise": "^6.1.1",
 		"eslint-plugin-react": "^7.32.2",
+		"gh-pages": "^5.0.0",
 		"html-webpack-plugin": "^5.5.0",
 		"mini-css-extract-plugin": "^2.7.5",
 		"prettier": "^2.8.6",
@@ -54,5 +56,6 @@
 		"webpack-dev-server": "^4.13.1",
 		"webpack-merge": "^5.8.0"
 	},
-	"browserList": "^ 0.25%, not dead, not ie 11"
+	"browserList": "^ 0.25%, not dead, not ie 11",
+	"homepage": "https://rodrigoandregg.github.io/smash-pass"
 }
