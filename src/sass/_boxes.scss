@@ -30,4 +30,9 @@
 		background-color: $hover-bg;
 		color: $hover-clr;
 	}
+
+	&:active {
+		background-color: $primary;
+		color: $light;
+	}
 }

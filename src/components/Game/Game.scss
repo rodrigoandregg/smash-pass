@@ -6,26 +6,17 @@
 	background-color: $secondary;
 	color: $light;
 	background-size: cover !important;
-	position: relative;
 	z-index: 1;
 	gap: 1em;
-	padding: 2em 0;
-
-	&::before {
-		content: '';
-		position: absolute;
-		@include flexBox;
-		height: 100%;
-		width: 100%;
-		background-color: $dark-acrylic;
-		backdrop-filter: blur(1em);
-		z-index: -1;
-	}
 
 	&-wrapper {
-		width: 90%;
+		width: 100%;
+		height: 100%;
 		@include flexBox($ff: column nowrap);
 		gap: 1em;
+		background-color: $dark-acrylic;
+		backdrop-filter: blur(1em);
+		padding: 6em 2em 0;
 	}
 
 	&-picture {

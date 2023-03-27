@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Counter from '../Counter/Counter';
 import './Game.scss';
 
-const Game = () => {
+const Game = ({ divRef }) => {
 	const BASE_URL = 'https://api.waifu.im';
 	const IMAGES_URL = `${BASE_URL}/search`;
 	const [waifu, setWaifu] = useState([]);
@@ -40,7 +40,7 @@ const Game = () => {
 			}}
 		>
 			<div className='Game-wrapper'>
-				<div className='Game-picture'>
+				<div className='Game-picture' ref={divRef}>
 					<img src={waifu} alt='' className='Game-img' loading='lazy' />
 				</div>
 				<div className='Game-options'>
