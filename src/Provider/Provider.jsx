@@ -37,23 +37,25 @@ const data = {
 		},
 	},
 	home: {
-		game: {
+		games: {
+			smashpass: {
+				btns: [
+					{
+						id: uuidv4(),
+						text: 'Pass',
+					},
+					{
+						id: uuidv4(),
+						text: 'Smash',
+					},
+				],
+			},
 			view: {
 				download: {
 					icon: <MdDownload />,
 					title: 'Descargar Imagen',
 				},
 			},
-			btns: [
-				{
-					id: uuidv4(),
-					text: 'Pass',
-				},
-				{
-					id: uuidv4(),
-					text: 'Smash',
-				},
-			],
 		},
 	},
 };

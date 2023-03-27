@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
 import { GlobalContext } from '../../Provider/Provider';
 import Counter from '../Counter/Counter';
-import './Game.scss';
+import './GameSmashPass.scss';
 
-const Game = ({ divRef }) => {
+const GameSmashPass = ({ divRef }) => {
 	const { home } = useContext(GlobalContext);
-	const { game } = home;
-	const { view } = game;
+	const { games } = home;
+	const { view } = games;
 	const { download } = view;
 	const BASE_URL = 'https://api.waifu.im';
 	const IMAGES_URL = `${BASE_URL}/search`;
@@ -74,4 +74,4 @@ const Game = ({ divRef }) => {
 	);
 };
 
-export default Game;
+export default GameSmashPass;

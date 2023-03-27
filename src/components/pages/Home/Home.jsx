@@ -1,9 +1,9 @@
-import Game from '../../Game/Game';
+import GameSmashPass from '../../GameSmashPass/GameSmashPass';
 
 const Home = ({ divRef }) => {
 	return (
 		<main className='main'>
-			<Game divRef={divRef} />
+			<GameSmashPass divRef={divRef} />
 		</main>
 	);
 };
