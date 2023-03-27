@@ -27,7 +27,7 @@ export const App = () => {
 			<Routes>
 				<Route exact path='/' element={<Home divRef={divRef} />} />
 				<Route exact path='/home' element={<Navigate to='/' />} />
-				<Route exact path='/versus' element={<Versus />} />
+				<Route exact path='/versus' element={<Versus divRef={divRef} />} />
 				<Route exact path='/quizes' element={<Quizes />} />
 				<Route exact path='/faqs' element={<Faqs />} />
 			</Routes>

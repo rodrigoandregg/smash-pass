@@ -39,6 +39,7 @@ const data = {
 	home: {
 		games: {
 			smashpass: {
+				heading: 'Smash or Pass?',
 				btns: [
 					{
 						id: uuidv4(),
@@ -49,6 +50,9 @@ const data = {
 						text: 'Smash',
 					},
 				],
+			},
+			versus: {
+				heading: 'Versus',
 			},
 			view: {
 				download: {

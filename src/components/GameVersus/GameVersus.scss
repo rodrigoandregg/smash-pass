@@ -1,22 +1,20 @@
 @import '../../../index.scss';
 
-.Smashpass {
-	@include flexBox($ff: column nowrap);
+.Versus {
+	@include flexBox();
 	width: 100%;
 	background-color: $secondary;
 	color: $light;
 	background-size: cover !important;
 	z-index: 1;
-	gap: 1em;
 
 	&-wrapper {
 		width: 100%;
-		height: 100%;
 		@include flexBox($ff: column nowrap);
 		gap: 1em;
 		background-color: $dark-acrylic;
 		backdrop-filter: blur(1em);
-		padding: 6em 2em;
+		padding: 6em 0;
 	}
 
 	&-heading {
@@ -37,9 +35,19 @@
 		}
 	}
 
+	&-options {
+		width: 90%;
+		max-width: 33em;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-content: center;
+		gap: 1em;
+		margin-bottom: 2em;
+	}
+
 	&-picture {
 		@include flexBox;
-		width: 16em;
+		width: 100%;
 		height: 26em;
 		border-radius: 0.5em;
 		overflow: hidden;
@@ -56,7 +64,8 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		@include flexBox;
+		@include flexBox($ff: column nowrap);
+		gap: 1em;
 		background-color: $dark-acrylic;
 		backdrop-filter: blur(0.2em) saturate(0.8);
 		opacity: 0;
@@ -67,9 +76,16 @@
 		}
 	}
 
+	&-btn {
+		@include btn;
+	}
+
 	&-download {
 		font-size: 3em;
 		transition: all 0.2s;
+		position: absolute;
+		bottom: 0.1em;
+		right: 0.1em;
 
 		&:hover {
 			color: $accent;
@@ -78,36 +94,31 @@
 			color: $primary;
 		}
 	}
-
-	&-options {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1em;
-		width: 16em;
-	}
-
-	&-btn {
-		@include btn;
-	}
 }
 
 @media (max-width: 768px) {
-	.Smashpass {
+	.Versus {
 		&-view {
 			position: absolute;
 			width: 100%;
 			height: 100%;
 			@include flexBox;
-			background: linear-gradient(145deg, transparent 80%, $dark-acrylic 90%);
+			background: linear-gradient(transparent 80%, $dark-acrylic 85%);
 			backdrop-filter: none;
 			opacity: 1;
 			transition: all 0.2s;
 		}
 
-		&-download {
+		&-btn {
 			position: absolute;
+			bottom: 0.5em;
+			right: 0.5em;
+		}
+
+		&-download {
+			right: unset;
+			left: 0.1em;
 			bottom: 0.1em;
-			right: 0.1em;
 		}
 	}
 }

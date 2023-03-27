@@ -6,7 +6,7 @@ import './GameSmashPass.scss';
 const GameSmashPass = ({ divRef }) => {
 	const { home } = useContext(GlobalContext);
 	const { games } = home;
-	const { view } = games;
+	const { view, smashpass } = games;
 	const { download } = view;
 	const BASE_URL = 'https://api.waifu.im';
 	const IMAGES_URL = `${BASE_URL}/search`;
@@ -39,32 +39,35 @@ const GameSmashPass = ({ divRef }) => {
 
 	return (
 		<section
-			className='Game'
+			className='Smashpass'
 			style={{
 				background: `url(${waifu}) center no-repeat`,
 			}}
 		>
-			<div className='Game-wrapper'>
-				<div className='Game-picture' ref={divRef}>
-					<img src={waifu} alt='' className='Game-img' loading='lazy' />
-					<div className='Game-view'>
+			<div className='Smashpass-wrapper'>
+				<h2 className='Smashpass-heading' ref={divRef}>
+					{smashpass.heading}
+				</h2>
+				<div className='Smashpass-picture'>
+					<img src={waifu} alt='' className='Smashpass-img' loading='lazy' />
+					<div className='Smashpass-view'>
 						<a
 							href={waifu}
 							download='waifu-image'
 							title={download.title}
 							target='_blank'
 							rel='noopener noreferrer'
-							className='Game-download'
+							className='Smashpass-download'
 						>
 							{download.icon}
 						</a>
 					</div>
 				</div>
-				<div className='Game-options'>
-					<button onClick={handleClickPass} className='Game-btn'>
+				<div className='Smashpass-options'>
+					<button onClick={handleClickPass} className='Smashpass-btn'>
 						Pass
 					</button>
-					<button onClick={handleClickSmash} className='Game-btn'>
+					<button onClick={handleClickSmash} className='Smashpass-btn'>
 						Smash
 					</button>
 				</div>

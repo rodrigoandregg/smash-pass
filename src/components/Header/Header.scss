@@ -96,6 +96,7 @@
 				transition: all 0.3s;
 				width: 8em;
 				height: 18em;
+				background-color: $dark-acrylic;
 				color: $light;
 				justify-content: unset;
 				grid-template-rows: repeat(4, 1fr);
@@ -110,12 +111,6 @@
 			max-width: 5em;
 			font-size: 1.5em;
 			margin: 0 0.5em;
-		}
-
-		&-menu {
-			&--open {
-				background-color: $dark-acrylic;
-			}
 		}
 	}
 }

@@ -7,4 +7,5 @@ body {
 
 .main {
 	@include flexBox($ff: column nowrap);
+	width: 100%;
 }
