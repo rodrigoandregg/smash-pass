@@ -15,7 +15,6 @@ const Game = () => {
 			const dataJson = await data.json();
 			const waifuImgSource = dataJson.images[0].url;
 			setWaifu(waifuImgSource);
-			console.log(waifu);
 		} catch (error) {
 			console.log(error);
 		}
