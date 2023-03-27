@@ -26,10 +26,10 @@ export const App = () => {
 			<Header cosa={cosa} />
 			<Routes>
 				<Route exact path='/' element={<Home divRef={divRef} />} />
-				<Route path='/home' element={<Navigate to='/' />} />
-				<Route path='/versus' element={<Versus />} />
-				<Route path='/quizes' element={<Quizes />} />
-				<Route path='/faqs' element={<Faqs />} />
+				<Route exact path='/home' element={<Navigate to='/' />} />
+				<Route exact path='/versus' element={<Versus />} />
+				<Route exact path='/quizes' element={<Quizes />} />
+				<Route exact path='/faqs' element={<Faqs />} />
 			</Routes>
 		</HashRouter>
 	);
