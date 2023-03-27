@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { MdMenuOpen } from 'react-icons/md';
+import { MdMenuOpen, MdDownload } from 'react-icons/md';
 
 const data = {
 	header: {
@@ -38,6 +38,12 @@ const data = {
 	},
 	home: {
 		game: {
+			view: {
+				download: {
+					icon: <MdDownload />,
+					title: 'Descargar Imagen',
+				},
+			},
 			btns: [
 				{
 					id: uuidv4(),

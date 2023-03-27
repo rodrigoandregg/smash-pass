@@ -26,11 +26,39 @@
 		border-radius: 0.5em;
 		overflow: hidden;
 		background-color: gray;
+		position: relative;
 	}
 
 	&-img {
 		height: 100%;
 		object-fit: cover;
+	}
+
+	&-view {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		@include flexBox;
+		background-color: $dark-acrylic;
+		backdrop-filter: blur(0.2em) saturate(0.8);
+		opacity: 0;
+		transition: all 0.5s;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+	&-download {
+		font-size: 3em;
+		transition: all 0.2s;
+
+		&:hover {
+			color: $accent;
+		}
+		&:active {
+			color: $primary;
+		}
 	}
 
 	&-options {
@@ -42,5 +70,26 @@
 
 	&-btn {
 		@include btn;
+	}
+}
+
+@media (max-width: 768px) {
+	.Game {
+		&-view {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			@include flexBox;
+			background: linear-gradient(145deg, transparent 80%, $dark-acrylic 90%);
+			backdrop-filter: none;
+			opacity: 1;
+			transition: all 0.2s;
+		}
+
+		&-download {
+			position: absolute;
+			bottom: 0.1em;
+			right: 0.1em;
+		}
 	}
 }
